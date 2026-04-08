@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harriets Dog Spa | Luxury Dog Grooming in Daybrook, Nottingham</title>
+    <meta name="description" content="Harriets Dog Spa - Luxury dog grooming salon in Daybrook, Nottingham. Qualified stylists, pet first aid trained. We treat your fluffy clients like our own.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root{--primary:#B8860B;--primary-dark:#8B6914;--secondary:#2C1810;--accent:#D4AF37;--dark:#1A1009;--light:#FDF8F0;--white:#FFF;--grey:#5C4F3D;--cream:#F5EDDD;--rose:#F3E8E0}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Montserrat',sans-serif;color:var(--dark);line-height:1.6}
+        h1,h2,h3{font-family:'Cormorant Garamond',serif}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.04);padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--primary);text-decoration:none}
+        .nav-links{display:flex;gap:2rem;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--dark);font-weight:500;font-size:.9rem;letter-spacing:.5px;text-transform:uppercase;transition:color .3s}
+        .nav-links a:hover{color:var(--primary)}
+        .nav-cta{background:var(--primary);color:white!important;padding:.6rem 1.4rem;border-radius:50px;text-transform:uppercase;font-size:.8rem;letter-spacing:1px}
+        .hero{min-height:100vh;background:linear-gradient(135deg,var(--cream) 0%,var(--rose) 50%,var(--light) 100%);display:flex;align-items:center;padding:7rem 2rem 4rem}
+        .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero h1{font-size:3.2rem;line-height:1.1;margin-bottom:1rem;color:var(--secondary)}.hero h1 span{color:var(--primary)}
+        .hero-sub{font-size:1.1rem;color:var(--grey);margin-bottom:2rem;max-width:480px}
+        .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 2rem;border-radius:50px;font-weight:600;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-size:.9rem;letter-spacing:.5px}
+        .btn-gold{background:var(--primary);color:white;box-shadow:0 4px 15px rgba(184,134,11,.3)}
+        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,134,11,.4)}
+        .btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+        .btn-outline:hover{background:var(--primary);color:white}
+        .hero-card{background:white;border-radius:24px;padding:2.5rem;box-shadow:0 20px 60px rgba(0,0,0,.06);text-align:center;border:1px solid rgba(184,134,11,.15)}
+        .hero-logo{width:130px;height:130px;background:linear-gradient(135deg,var(--accent),var(--primary));border-radius:50%;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+        .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(184,134,11,.1);color:var(--primary);padding:.4rem 1rem;border-radius:50px;font-size:.85rem;font-weight:600;margin-top:1rem}
+        .services{padding:6rem 2rem;background:var(--white)}
+        .section-header{text-align:center;max-width:600px;margin:0 auto 4rem}
+        .section-header h2{font-size:2.5rem;margin-bottom:.6rem}.section-header p{color:var(--grey);font-size:1.05rem}
+        .services-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .service-card{background:var(--light);border-radius:20px;padding:2.5rem 2rem;text-align:center;transition:transform .3s,box-shadow .3s;border:1px solid transparent}
+        .service-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.06);border-color:var(--accent)}
+        .service-icon{width:70px;height:70px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:16px;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;font-size:2rem}
+        .service-card h3{font-size:1.3rem;margin-bottom:.5rem;font-family:'Cormorant Garamond',serif}.service-card p{color:var(--grey);font-size:.93rem}
+        .luxury{padding:6rem 2rem;background:var(--secondary);color:white}
+        .luxury .section-header h2{color:white}.luxury .section-header p{color:rgba(255,255,255,.7)}
+        .luxury-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+        .luxury-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem;display:flex;gap:1.2rem}
+        .luxury-icon{font-size:2rem;flex-shrink:0;width:55px;height:55px;background:rgba(212,175,55,.15);border-radius:14px;display:flex;align-items:center;justify-content:center}
+        .luxury-card h3{font-size:1.15rem;margin-bottom:.3rem;font-family:'Cormorant Garamond',serif}.luxury-card p{font-size:.9rem;opacity:.8}
+        .reviews{padding:6rem 2rem;background:var(--light)}
+        .reviews-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .review-card{background:white;border-radius:20px;padding:2rem;position:relative;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+        .review-card::before{content:'\201C';font-size:4rem;color:var(--primary);opacity:.15;position:absolute;top:.5rem;left:1.2rem;font-family:serif}
+        .review-stars{color:var(--accent);margin-bottom:.8rem;font-size:1.1rem}
+        .review-text{color:var(--grey);font-size:.93rem;margin-bottom:1rem;font-style:italic}.reviewer{font-weight:600;font-size:.88rem}.reviewer span{color:var(--grey);font-weight:400}
+        .contact{padding:6rem 2rem;background:var(--secondary);color:white}
+        .contact .section-header h2{color:white}.contact .section-header p{color:rgba(255,255,255,.7)}
+        .contact-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+        .contact-info{display:flex;flex-direction:column;gap:1.5rem}
+        .contact-item{display:flex;align-items:center;gap:1rem}
+        .contact-icon{width:48px;height:48px;background:var(--primary);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+        .contact-item h4{font-size:.82rem;opacity:.6;margin-bottom:.1rem;font-weight:400}.contact-item p{font-size:1rem;font-weight:500}
+        .contact-item a{color:white;text-decoration:none}.contact-item a:hover{color:var(--accent)}
+        .contact-map{background:rgba(255,255,255,.05);border-radius:20px;overflow:hidden;min-height:280px}
+        .contact-map iframe{width:100%;height:100%;border:0}
+        footer{background:#0D0804;color:rgba(255,255,255,.4);padding:2rem;text-align:center;font-size:.85rem}
+        footer a{color:var(--accent);text-decoration:none}
+        .mobile-menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--dark)}
+        @media(max-width:768px){.nav-links{display:none}.mobile-menu-btn{display:block}.hero-inner{grid-template-columns:1fr;text-align:center}.hero h1{font-size:2.4rem}.hero-sub{margin:0 auto 2rem}.hero-btns{justify-content:center}.services-grid,.reviews-grid{grid-template-columns:1fr}.luxury-grid,.contact-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#" class="nav-brand">Harriets Dog Spa</a>
+    <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#luxury">The Experience</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+</nav>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <h1><span>Luxury</span> Dog Grooming</h1>
+            <p class="hero-sub">A premium grooming experience in Daybrook, Nottingham. Qualified stylists who treat your fluffy companions like their own. Pet first aid trained for your complete peace of mind.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-gold">Book An Appointment</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-logo">&#128142;</div>
+            <h3 style="font-size:1.4rem;font-family:'Cormorant Garamond',serif;">Harriets Dog Spa</h3>
+            <p style="color:var(--grey);margin-top:.3rem;">Daybrook, Nottingham</p>
+            <div style="color:var(--accent);margin-top:.8rem;font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="hero-badge">&#10003; 1,200+ Facebook Followers</div>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="section-header"><h2>Spa Services</h2><p>Luxury grooming tailored to your dog's individual needs.</p></div>
+    <div class="services-grid">
+        <div class="service-card"><div class="service-icon">&#9986;</div><h3>Full Luxury Groom</h3><p>The complete spa experience. Bath with premium products, blow-dry, full haircut, ear clean, nail trim, cologne and bandana.</p></div>
+        <div class="service-card"><div class="service-icon">&#128705;</div><h3>Bath &amp; Pamper</h3><p>Refreshing luxury bath, blow-dry, brush out and tidy. Perfect for maintaining that salon-fresh feeling.</p></div>
+        <div class="service-card"><div class="service-icon">&#128062;</div><h3>Puppy Spa Day</h3><p>A gentle introduction to grooming for your puppy in our calm, luxury environment.</p></div>
+        <div class="service-card"><div class="service-icon">&#127775;</div><h3>De-matting Treatment</h3><p>Specialist care for tangled or matted coats. Patient, gentle approach to restore your dog's coat.</p></div>
+        <div class="service-card"><div class="service-icon">&#9997;</div><h3>Nail &amp; Paw Care</h3><p>Professional nail trimming and paw pad treatment. Quick appointments available.</p></div>
+        <div class="service-card"><div class="service-icon">&#128171;</div><h3>De-shedding Spa</h3><p>Deep coat treatment to reduce shedding. Your home (and sofa) will thank you.</p></div>
+    </div>
+</section>
+
+<section class="luxury" id="luxury">
+    <div class="section-header"><h2>The Harriets Experience</h2><p>More than just a groom &mdash; it's a spa day for your dog.</p></div>
+    <div class="luxury-grid">
+        <div class="luxury-card"><div class="luxury-icon">&#127891;</div><div><h3>Qualified Stylists</h3><p>Our team are fully qualified grooming professionals with extensive breed-specific knowledge.</p></div></div>
+        <div class="luxury-card"><div class="luxury-icon">&#129657;</div><div><h3>Pet First Aid Trained</h3><p>Every stylist is pet first aid certified. Your dog's safety and wellbeing always comes first.</p></div></div>
+        <div class="luxury-card"><div class="luxury-icon">&#128142;</div><div><h3>Premium Products</h3><p>We use only the finest grooming products to nourish your dog's skin and coat.</p></div></div>
+        <div class="luxury-card"><div class="luxury-icon">&#10084;&#65039;</div><div><h3>Treated Like Our Own</h3><p>We genuinely love every dog that walks through our door. Your pet is family to us.</p></div></div>
+    </div>
+</section>
+
+<section class="reviews" id="reviews">
+    <div class="section-header"><h2>Client Testimonials</h2><p>See why 1,200+ people follow us on Facebook.</p></div>
+    <div class="reviews-grid">
+        <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Absolute luxury experience! My dog comes home smelling incredible and looking like a show dog. The staff clearly adore animals."</p><div class="reviewer">Happy Customer <span>&bull; Facebook</span></div></div>
+        <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"The best dog groomer in Nottingham by far. So professional, qualified, and my dog absolutely loves going. True spa treatment!"</p><div class="reviewer">Regular Client <span>&bull; Facebook</span></div></div>
+        <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Wouldn't trust anyone else with our dog. The team at Harriets are amazing - so caring and skilled. Always a perfect groom."</p><div class="reviewer">Loyal Customer <span>&bull; Facebook</span></div></div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="section-header"><h2>Book Your Visit</h2><p>Treat your dog to the luxury grooming experience they deserve.</p></div>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <div class="contact-item"><div class="contact-icon">&#128205;</div><div><h4>Location</h4><p>22a Mansfield Road, Daybrook, Nottingham</p></div></div>
+            <div class="contact-item"><div class="contact-icon">&#128216;</div><div><h4>Facebook</h4><p><a href="https://www.facebook.com/HarrietsDogSpa" target="_blank">Harriets Dog Spa</a></p></div></div>
+            <div class="contact-item"><div class="contact-icon">&#128172;</div><div><h4>Message Us</h4><p><a href="https://m.me/HarrietsDogSpa" target="_blank">Send a Facebook Message</a></p></div></div>
+        </div>
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4828!2d-1.15!3d53.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMansfield+Road%2C+Daybrook%2C+Nottingham!5e0!3m2!1sen!2suk!4v1" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Harriets Dog Spa &bull; Luxury Dog Grooming in Daybrook, Nottingham</p>
+    <p style="margin-top:.4rem;">Website by <a href="https://innov8workflows.co.uk" target="_blank">Innov8 Workflows</a></p>
+</footer>
+</body>
+</html>
